@@ -1,0 +1,5 @@
+pip -list
+pip -list
+pip show pandas
+pip search tsseract
+pip freeze > requirements.txt
