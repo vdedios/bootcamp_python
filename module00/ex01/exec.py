@@ -8,7 +8,8 @@ def main():
     else :
         aux = ''.join(sys.argv[1:])
         for letter in aux[::-1]:
-            print(letter.lower() if letter.isupper() else letter.upper(), end = '')
+            sys.stdout.write(letter.lower() if letter.isupper()
+                            else letter.upper())
         print('')
 
 if __name__ == "__main__":
