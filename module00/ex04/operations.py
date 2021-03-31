@@ -3,8 +3,7 @@
 import sys
 
 def usage(err):
-    if len(err): print(err)
-    print('Usage: python operations.py <number1> <number2>\n'
+    print(err + 'Usage: python operations.py <number1> <number2>\n'
            'Example:\n'
             '   python operations.py 10 3')
 
@@ -23,19 +22,19 @@ def check_input_error(args):
         return False
     return True
 
-def do_operations(args):
-    sys.stdout.write(f'Sum:         {int(args[1]) + int(args[2])}\n'
-                     f'Difference:  {int(args[1]) - int(args[2])}\n'
-                     f'Product:     {int(args[1]) * int(args[2])}\n')
-    if int(args[2]) == 0:
-        sys.stdout.write(f'Quotient:    ERROR (div by zero)\n'
-                         f'Remainder:   ERROR (modulo by zero)\n')
+def calc(a, b):
+    print(f'Sum:         {a + b}')
+    print(f'Difference:  {a - b}')
+    print(f'Product:     {a * b}')
+    if b == 0:
+        print(f'Quotient:    ERROR (div by zero)')
+        print(f'Remainder:   ERROR (modulo by zero)')
     else:
-        sys.stdout.write(f'Quotient:    {int(args[1]) / int(args[2])}\n'
-                         f'Remainder:   {int(args[1]) % int(args[2])}\n')
+        print(f'Quotient:    {a / b}')
+        print(f'Remainder:   {a % b}')
 
 def main():
-    check_input_error(sys.argv) and do_operations(sys.argv)
+    check_input_error(sys.argv) and calc(int(sys.argv[1]), int(sys.argv[2]))
 
 if __name__ == "__main__":
     main()
