@@ -22,9 +22,12 @@ def main():
         """))
     while True:
         number = input("What's your guess between 1 and 99?\n")
-        if not number.isdecimal():
+        if number == 'exit':
+            print('Goodbye!')
+            break
+        elif not number.isdecimal():
             print("That's not a number.")
-        elif is_match(int(number), guess, it) or number == 'exit':
+        elif is_match(int(number), guess, it):
             break
         it += 1
 
